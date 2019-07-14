@@ -1,7 +1,7 @@
 - charm_name: neutron-api
-  config_name: enable-dvr
-  config_value: 'True'
   config:
-    requires:
-      neutron-openvswitch:
-        name: bridge-mappings
+    - config_name: enable-dvr
+      config_value: 'True'
+      requires:
+        neutron-openvswitch:
+          name: bridge-mappings
