@@ -5,3 +5,10 @@
       requires:
         neutron-openvswitch:
           name: bridge-mappings
+  relations:
+    - config:
+        name: enable-dvr
+        value: 'True'
+      requires:
+        - - 'neutron-openvswitch:neutron-plugin-api'
+          - 'neutron-api:neutron-plugin-api'

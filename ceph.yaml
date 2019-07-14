@@ -1,0 +1,10 @@
+- charm_name: ceph-osd
+  relations:
+    - requires:
+      - - ceph-mon
+        - ceph-osd
+- charm_name: ceph-radosgw
+  relations:
+    - requires:
+      - - ceph-mon
+        - ceph-radosgw
