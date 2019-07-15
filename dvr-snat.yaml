@@ -1,0 +1,19 @@
+- charm_name: neutron-openvswitch
+  config:
+    - config_name: use-dvr-snat
+      config_value: True
+      requires:
+        neutron-api:
+          - name: enable-dvr
+            value: True
+        neutron-openvswitch:
+          - name: bridge-mappings
+          - name: enable-local-dhcp-and-metadata
+            value: True
+  relations:
+    - config:
+        name: enable-dvr
+        value: 'True'
+      requires:
+        - - 'neutron-openvswitch:neutron-plugin-api'
+          - 'neutron-api:neutron-plugin-api'
