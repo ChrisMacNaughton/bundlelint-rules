@@ -17,3 +17,9 @@
       requires:
         - - 'neutron-openvswitch:neutron-plugin-api'
           - 'neutron-api:neutron-plugin-api'
+    - config:
+        name: use-dvr-snat
+        value: true
+      forbids:
+        - - 'neutron-openvswitch:neutron-plugin'
+          - 'octavia:neutron-plugin'
